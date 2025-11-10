@@ -1,0 +1,57 @@
+services:
+  # PHP Service Container
+  app:
+    build:
+      args:
+        user: nima
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: design-patterns
+    container_name: design-patterns
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - design-patterns-network
+
+  # Nginx Service
+  nginx:
+    image: nginx:stable-perl
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - design-patterns-network
+
+  # Database Service
+  db:
+    image: postgres:17
+    container_name: db
+    restart: unless-stopped
+    environment:
+      PGPASSWORD: '${DB_PASSWORD:-secret}'
+      POSTGRES_DB: '${DB_DATABASE}'
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - ./docker-compose/pgsql:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - design-patterns-network
+
+networks:
+  design-patterns-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local
+
