@@ -1,0 +1,28 @@
+{
+    "name": "nwidart/factorymethod",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\FactoryMethod\\": "app/",
+            "Modules\\FactoryMethod\\Database\\Factories\\": "database/factories/",
+            "Modules\\FactoryMethod\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\FactoryMethod\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "FactoryMethod",
+    "alias": "factorymethod",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FactoryMethod\\Providers\\FactoryMethodServiceProvider"
+    ],
+    "files": []
+}
