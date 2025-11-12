@@ -1,3 +1,4 @@
 {
-    "FactoryMethod": true
+    "FactoryMethod": true,
+    "AbstractFactory": true
 }

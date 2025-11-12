@@ -1,0 +1,11 @@
+{
+    "name": "AbstractFactory",
+    "alias": "abstractfactory",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AbstractFactory\\Providers\\AbstractFactoryServiceProvider"
+    ],
+    "files": []
+}
