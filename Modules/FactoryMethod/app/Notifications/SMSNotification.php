@@ -6,8 +6,8 @@ use Modules\FactoryMethod\Contracts\NotificationInterface;
 
 class SMSNotification implements NotificationInterface
 {
-    public function send(string $message): void
+    public function send(string $message): string
     {
-        echo 'sending sms ' . $message;
+        return 'sending sms '.$message;
     }
 }

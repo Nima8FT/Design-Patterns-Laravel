@@ -47,7 +47,7 @@ jobs:
         run: docker compose exec app ./artisan migrate:fresh --seed
 
       - name: Run tests
-        run: docker compose exec -T app php artisan test
+        run: docker compose exec -T app php artisan test Modules
 
       - name: Run security audit
         run: docker compose exec app bash -lc "git config --global --add safe.directory /var/www && composer audit || true"

@@ -8,8 +8,10 @@ abstract class NotificationFactory
 {
     abstract public function createNotification(): NotificationInterface;
 
-    public function notify(string $message): void {
+    public function notify(string $message): string
+    {
         $notification = $this->createNotification();
-        $notification->send($message);
+
+        return $notification->send($message);
     }
 }
