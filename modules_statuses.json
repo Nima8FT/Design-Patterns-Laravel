@@ -1,4 +1,5 @@
 {
     "FactoryMethod": true,
-    "AbstractFactory": true
+    "AbstractFactory": true,
+    "Builder": true
 }
