@@ -2,5 +2,6 @@
     "FactoryMethod": true,
     "AbstractFactory": true,
     "Builder": true,
-    "Prototype": true
+    "Prototype": true,
+    "Singleton": true
 }
